@@ -1741,6 +1741,14 @@ document.getElementById('legalOverlay').addEventListener('click', function(e) {
 document.addEventListener('keydown', function(e) { if (e.key === 'Escape') cerrarLegal(); });
 
 function aceptarCookies() {
+  document.getElementById('cookieBanner').style.display = 'none';
   try { localStorage.setItem('cookies_ok','1'); } catch(e) {}
   try { sessionStorage.setItem('cookies_ok','1'); } catch(e) {}
-  document.getElementById('cookieBanner').style.display =
+}
+var cookiesOk = false;
+try { cookiesOk = localStorage.getItem('cookies_ok'); } catch(e) {}
+try { if (!cookiesOk) cookiesOk = sessionStorage.getItem('cookies_ok'); } catch(e) {}
+if (!cookiesOk) { document.getElementById('cookieBanner').style.display = 'flex'; }
+</script>
+</body>
+</html>
