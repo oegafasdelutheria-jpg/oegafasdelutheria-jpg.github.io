@@ -1008,6 +1008,26 @@ footer {
   #mImg { max-height: 130px !important; width: auto !important; max-width: 85% !important; }
   #mThumbs > div { width: 40px !important; height: 40px !important; margin-right: 4px !important; }
 }
+
+/* LIGHTBOX */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.95);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+#lightbox.open { display: flex; }
+#lightbox img {
+  max-width: 95vw;
+  max-height: 95vh;
+  object-fit: contain;
+  border-radius: 4px;
+}
+#mImg { cursor: zoom-in; }
 </style>
 </head>
 <body>
@@ -1515,7 +1535,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="modal" id="modalBox">
     <button onclick="cerrar()" style="position:absolute;top:16px;right:16px;width:36px;height:36px;background:var(--bg3);border:1px solid var(--border);border-radius:50%;color:var(--text2);font-size:20px;display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:10;line-height:1;">&#215;</button>
     <div id="mImgSection" style="background:#f5f0e8;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:48px;border-radius:8px 0 0 8px;min-height:360px;">
-      <img id="mImg" src="" alt="" style="width:100%;object-fit:contain;max-height:320px;">
+      <img id="mImg" src="" alt="" onclick="abrirLightbox()" style="width:100%;object-fit:contain;max-height:320px;cursor:zoom-in;">
       <div id="mThumbs" style="margin-top:16px;text-align:center;"></div>
     </div>
     <div style="padding:48px 40px;display:flex;flex-direction:column;">
@@ -1701,6 +1721,11 @@ document.addEventListener('keydown', function(e) { if (e.key === 'Escape') cerra
 
 renderizar('all');
 </script>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="cerrarLightbox()">
+  <img id="lightboxImg" src="" alt="">
+</div>
 <!-- COOKIE BANNER -->
 <div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9998;background:#1a1410;border-top:1px solid rgba(201,169,110,0.3);padding:20px 48px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap">
   <p style="font-size:0.85rem;color:rgba(245,240,232,0.6);margin:0;max-width:700px">Usamos cookies propias para el funcionamiento del sitio. No usamos cookies de seguimiento ni publicidad. <span onclick="abrirLegal('cookies')" style="color:#c9a96e;cursor:pointer;text-decoration:underline">Más información</span></p>
@@ -1725,6 +1750,16 @@ var TEXTOS_LEGALES = {
 
   devoluciones: '<h2 style="font-family:var(--serif);font-size:2rem;font-weight:300;margin-bottom:24px">Devoluciones y Garantía</h2><p style="font-size:0.9rem;color:var(--text2);line-height:1.8;margin-bottom:16px"><strong>Derecho de desistimiento (14 días):</strong> De acuerdo con la normativa europea de consumidores, tienes 14 días naturales desde la recepción de tu pedido para devolvérnoslo sin necesidad de justificación. Te reembolsamos el importe íntegro incluyendo los gastos de envío originales.</p><p style="font-size:0.9rem;color:var(--text2);line-height:1.8;margin-bottom:16px"><strong>No te quedan bien o no te gustan:</strong> Te las cambiamos por otro modelo o te devolvemos el dinero. Así de sencillo. Escríbenos a info@oegafasdemadera.com o llámanos al 617 022 065.</p><p style="font-size:0.9rem;color:var(--text2);line-height:1.8;margin-bottom:16px"><strong>Garantía de fabricación:</strong> Todos nuestros productos tienen garantía total frente a defectos de fabricación. Las lentes alemanas B+S cuentan además con la garantía del fabricante.</p><p style="font-size:0.9rem;color:var(--text2);line-height:1.8;margin-bottom:16px"><strong>Reparaciones:</strong> Fabricamos cada gafa en nuestro taller, así que también podemos repararla. Si con el tiempo algo se deteriora o se rompe, tráela a C/ San Agustín 39, La Laguna, o envíanosla. Las gafas Oe son para toda la vida.</p><p style="font-size:0.9rem;color:var(--text2);line-height:1.8"><strong>Proceso de devolución:</strong> Contáctanos primero por email o teléfono. Te indicamos cómo enviarnos el producto. Una vez recibido en buen estado, procesamos el reembolso en un máximo de 5 días hábiles.</p>'
 };
+
+
+function abrirLightbox() {
+  var src = document.getElementById('mImg').src;
+  document.getElementById('lightboxImg').src = src;
+  document.getElementById('lightbox').classList.add('open');
+}
+function cerrarLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+}
 
 function abrirLegal(tipo) {
   document.getElementById('legalContent').innerHTML = TEXTOS_LEGALES[tipo];
