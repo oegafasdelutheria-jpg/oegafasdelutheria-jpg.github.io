@@ -1661,6 +1661,7 @@ function abrir(id) {
     overlay.scrollTop = 0;
   });
   document.body.style.overflow = 'hidden';
+  history.pushState({ modal: true }, '');
 }
 
 function cambiarFoto(idx) {
@@ -1739,6 +1740,12 @@ document.getElementById('legalOverlay').addEventListener('click', function(e) {
   if (e.target === this) cerrarLegal();
 });
 document.addEventListener('keydown', function(e) { if (e.key === 'Escape') cerrarLegal(); });
+
+window.addEventListener('popstate', function(e) {
+  if (document.getElementById('overlay').classList.contains('open')) {
+    cerrar();
+  }
+});
 
 function aceptarCookies() {
   document.getElementById('cookieBanner').style.display = 'none';
