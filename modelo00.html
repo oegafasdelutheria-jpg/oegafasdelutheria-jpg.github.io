@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modelo 00 — Hecha para quien mira diferente · Oë Gafas de Madera</title>
+<meta name="description" content="La redonda. Icónica, atemporal, artesanal. Palisandro certificado, lentes alemanas, bisagras flex. Hecha a mano en Canarias.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,300;0,6..96,400;0,6..96,700;1,6..96,300;1,6..96,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --bg:    #ffffff;
+  --bg2:   #f9f6f1;
+  --bg3:   #f2ede4;
+  --gold:  #9a6420;
+  --gold2: #b87d30;
+  --text:  #1a1410;
+  --text2: #5a4a38;
+  --text3: #9a8878;
+  --border: rgba(26,20,16,0.08);
+  --serif: 'Bodoni Moda', Georgia, serif;
+  --sans:  'Jost', sans-serif;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-weight: 300;
+  line-height: 1.7;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+/* NAV */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 48px;
+  height: 72px;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+.nav-logo span { color: var(--gold); }
+.nav-back {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.2s;
+}
+.nav-back:hover { color: var(--gold); }
+.nav-cta {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--bg);
+  background: var(--text);
+  padding: 10px 24px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: var(--gold); }
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 72px;
+}
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 64px;
+  position: relative;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 24px;
+}
+.hero-title {
+  font-family: var(--serif);
+  font-size: clamp(3rem, 5vw, 5.5rem);
+  font-weight: 300;
+  line-height: 1.05;
+  margin-bottom: 32px;
+}
+.hero-title em { font-style: italic; color: var(--gold); }
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: var(--text2);
+  max-width: 440px;
+  margin-bottom: 48px;
+  line-height: 1.8;
+}
+.hero-price {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 8px;
+}
+.hero-price-note {
+  font-size: 12px;
+  color: var(--text3);
+  letter-spacing: 0.1em;
+  margin-bottom: 32px;
+}
+.btn-comprar {
+  display: inline-block;
+  background: var(--text);
+  color: var(--bg);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 18px 48px;
+  border-radius: 4px;
+  transition: background 0.2s;
+  width: fit-content;
+}
+.btn-comprar:hover { background: var(--gold); }
+
+.hero-right {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg2);
+}
+.hero-right img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* LENNON */
+.lennon {
+  padding: 120px 0;
+  background: var(--text);
+  color: var(--bg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.lennon::before {
+  content: '"';
+  font-family: var(--serif);
+  font-size: 40vw;
+  color: rgba(255,255,255,0.03);
+  position: absolute;
+  top: -10%;
+  left: 50%;
+  transform: translateX(-50%);
+  line-height: 1;
+  pointer-events: none;
+}
+.lennon-label {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold2);
+  margin-bottom: 32px;
+}
+.lennon-quote {
+  font-family: var(--serif);
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  font-weight: 300;
+  font-style: italic;
+  max-width: 800px;
+  margin: 0 auto 24px;
+  line-height: 1.3;
+  color: #f5f0e8;
+}
+.lennon-author {
+  font-size: 12px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--gold2);
+}
+.lennon-imgs {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 80px;
+  padding: 0 48px;
+  flex-wrap: wrap;
+}
+.lennon-ref {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  opacity: 0.7;
+}
+.lennon-ref-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  font-style: italic;
+  color: var(--gold2);
+}
+.lennon-ref span {
+  font-size: 10px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245,240,232,0.5);
+}
+
+/* MODELOS */
+.modelos {
+  padding: 120px 0;
+  background: var(--bg);
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 48px; }
+.section-label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 16px;
+}
+.section-title {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 64px;
+}
+.section-title em { font-style: italic; color: var(--gold); }
+
+.modelos-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.modelo-card {
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg2);
+  aspect-ratio: 4/3;
+}
+.modelo-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.modelo-card:hover img { transform: scale(1.03); }
+
+/* SPECS — cuadro sinóptico */
+.specs {
+  padding: 120px 0;
+  background: var(--bg2);
+}
+.specs-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 64px;
+}
+.spec-item {
+  padding: 48px;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.spec-item:nth-child(even) { border-right: none; }
+.spec-item:nth-last-child(-n+2) { border-bottom: none; }
+.spec-number {
+  font-family: var(--serif);
+  font-size: 3.5rem;
+  font-weight: 300;
+  color: var(--gold);
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.spec-title {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 12px;
+}
+.spec-desc {
+  font-size: 0.9rem;
+  color: var(--text2);
+  line-height: 1.7;
+}
+.spec-arrow {
+  position: absolute;
+  top: 48px;
+  right: 48px;
+  font-size: 1.5rem;
+  color: var(--gold);
+  opacity: 0.4;
+}
+
+/* BODEGON */
+.bodegon {
+  padding: 0;
+  position: relative;
+}
+.bodegon img {
+  width: 100%;
+  max-height: 70vh;
+  object-fit: cover;
+}
+.bodegon-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 64px;
+  background: linear-gradient(to top, rgba(26,20,16,0.8) 0%, transparent 100%);
+  color: #f5f0e8;
+}
+.bodegon-overlay p {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  font-weight: 300;
+  font-style: italic;
+  max-width: 600px;
+}
+
+/* REGALO */
+.regalo {
+  padding: 120px 0;
+  background: var(--bg3);
+}
+.regalo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-top: 64px;
+}
+.regalo-text h3 {
+  font-family: var(--serif);
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 24px;
+  line-height: 1.2;
+}
+.regalo-text h3 em { font-style: italic; color: var(--gold); }
+.regalo-text p {
+  color: var(--text2);
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+.regalo-items {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.regalo-item {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+  padding: 20px;
+  background: var(--bg);
+  border-radius: 6px;
+  border: 1px solid var(--border);
+}
+.regalo-icon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.regalo-item-text strong {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  margin-bottom: 4px;
+}
+.regalo-item-text span {
+  font-size: 12px;
+  color: var(--text3);
+}
+
+/* CTA FINAL */
+.cta-final {
+  padding: 160px 0;
+  background: var(--text);
+  text-align: center;
+  color: var(--bg);
+}
+.cta-final .section-label { color: var(--gold2); }
+.cta-final h2 {
+  font-family: var(--serif);
+  font-size: clamp(2.5rem, 5vw, 5rem);
+  font-weight: 300;
+  line-height: 1.1;
+  margin: 24px 0 16px;
+}
+.cta-final h2 em { font-style: italic; color: var(--gold2); }
+.cta-final p {
+  color: rgba(245,240,232,0.6);
+  margin-bottom: 48px;
+  font-size: 1rem;
+}
+.cta-final-price {
+  font-family: var(--serif);
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+.cta-final-note {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: rgba(245,240,232,0.4);
+  margin-bottom: 40px;
+}
+.btn-comprar-final {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--bg);
+  font-family: var(--sans);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 20px 56px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.btn-comprar-final:hover { background: var(--gold2); }
+
+/* FOOTER */
+footer {
+  background: var(--text);
+  color: rgba(245,240,232,0.4);
+  text-align: center;
+  padding: 32px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+footer a { color: var(--gold2); }
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav { padding: 0 24px; }
+  .hero { grid-template-columns: 1fr; }
+  .hero-left { padding: 60px 24px; }
+  .hero-right { height: 60vw; }
+  .container { padding: 0 24px; }
+  .modelos-grid { grid-template-columns: 1fr; }
+  .specs-grid { grid-template-columns: 1fr; }
+  .spec-item { border-right: none; }
+  .spec-item:nth-last-child(-n+2) { border-bottom: 1px solid var(--border); }
+  .spec-item:last-child { border-bottom: none; }
+  .regalo-grid { grid-template-columns: 1fr; gap: 40px; }
+  .bodegon-overlay { padding: 32px; }
+  .lennon { padding: 80px 24px; }
+  .lennon-imgs { gap: 24px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">O<span>ë</span></a>
+  <a href="index.html" class="nav-back">← Volver a la tienda</a>
+  <a href="https://buy.stripe.com/6oUaEX8c88nlgx3fRK1oI0d" class="nav-cta">Comprar · 160€</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Modelo 00 · Edición Especial</div>
+    <h1 class="hero-title">Hecha para<br>quien mira<br><em>diferente.</em></h1>
+    <p class="hero-subtitle">La redonda. La más atemporal de la colección Oë. Palisandro FSC con veta natural visible, lentes alemanas y bisagras flex que se adaptan a cualquier rostro.</p>
+    <div class="hero-price">160 €</div>
+    <div class="hero-price-note">Impuestos incluidos · Envío gratuito · Fabricada en 48h</div>
+    <a href="https://buy.stripe.com/6oUaEX8c88nlgx3fRK1oI0d" class="btn-comprar">Comprar ahora</a>
+  </div>
+  <div class="hero-right">
+    <img src="bodegon2.png" alt="Modelo 00 Oë Gafas de Madera">
+  </div>
+</section>
+
+<!-- LENNON -->
+<section class="lennon">
+  <div class="lennon-label">Una forma. Una historia.</div>
+  <p class="lennon-quote">"La montura redonda no es una tendencia. Es un estado de ánimo."</p>
+  <p class="lennon-author">— La historia de las redondas</p>
+
+  <div class="lennon-imgs">
+    <div class="lennon-ref">
+      <div class="lennon-ref-circle">60s</div>
+      <span>John Lennon</span>
+    </div>
+    <div class="lennon-ref">
+      <div class="lennon-ref-circle">∞</div>
+      <span>Atemporal</span>
+    </div>
+    <div class="lennon-ref">
+      <div class="lennon-ref-circle">Oë</div>
+      <span>Canarias · Hoy</span>
+    </div>
+  </div>
+
+  <div style="max-width:700px;margin:80px auto 0;padding:0 24px;color:rgba(245,240,232,0.55);font-size:0.95rem;line-height:1.9;text-align:center;">
+    La montura redonda lleva décadas desafiando las reglas. Desde los años 60 hasta hoy, quien la elige no busca seguir la moda — la define. El Modelo 00 de Oë recoge esa tradición y la reinterpreta en palisandro natural, hecho a mano en La Laguna, Tenerife.
+  </div>
+</section>
+
+<!-- FOTOS CON MODELO -->
+<section class="modelos" style="background:var(--bg2);">
+  <div class="container">
+    <div class="section-label">Como quedan</div>
+    <h2 class="section-title">Una gafa para<br><em>cualquier rostro</em></h2>
+    <div class="modelos-grid">
+      <div class="modelo-card">
+        <img src="p00-modelo.png.png" alt="Modelo 00 hombre">
+      </div>
+      <div class="modelo-card">
+        <img src="p00-modelo-f.png.png" alt="Modelo 00 mujer">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BODEGON -->
+<div class="bodegon">
+  <img src="p00-side2.jpg" alt="Modelo 00 detalle madera">
+  <div class="bodegon-overlay">
+    <p>Cada veta es única. Ninguna gafa es igual a otra.</p>
+  </div>
+</div>
+
+<!-- SPECS -->
+<section class="specs">
+  <div class="container">
+    <div class="section-label">Lo que la hace especial</div>
+    <h2 class="section-title">Cada detalle<br><em>tiene una razón</em></h2>
+    <div class="specs-grid">
+      <div class="spec-item">
+        <div class="spec-arrow">↗</div>
+        <div class="spec-number">01</div>
+        <div class="spec-title">Palisandro FSC Certificado</div>
+        <div class="spec-desc">Madera de origen controlado con veta natural visible. Cada pieza tiene un patrón único — tu gafa no se parece a ninguna otra en el mundo.</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-arrow">↗</div>
+        <div class="spec-number">02</div>
+        <div class="spec-title">Lentes Alemanas</div>
+        <div class="spec-desc">Fabricadas en Alemania bajo estándares ópticos europeos. Protección UV400, claridad total, degradado suave. Lo mejor que puedes poner delante de tus ojos.</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-arrow">↗</div>
+        <div class="spec-number">03</div>
+        <div class="spec-title">Bisagras Flex</div>
+        <div class="spec-desc">Se adaptan a cualquier anchura de cabeza. Comodidad desde el primer día, sin presión, sin marcas. Duran años sin perder tensión.</div>
+      </div>
+      <div class="spec-item">
+        <div class="spec-arrow">↗</div>
+        <div class="spec-number">04</div>
+        <div class="spec-title">Garantía Total</div>
+        <div class="spec-desc">Si no te gustan, te las cambiamos. Si no te quedan bien, te devolvemos el dinero. Sin preguntas. Porque sabemos lo que vendemos.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REGALO -->
+<section class="regalo">
+  <div class="container">
+    <div class="section-label">Para ti o para regalar</div>
+    <h2 class="section-title">El regalo que<br><em>no se olvida</em></h2>
+    <div class="regalo-grid">
+      <div class="regalo-text">
+        <h3>Una pieza única<br>para alguien <em>especial</em></h3>
+        <p>El Modelo 00 es unisex. Funciona igual de bien en un rostro masculino que femenino. Y al ser una pieza artesanal única, tiene ese valor que los regalos de serie nunca pueden tener.</p>
+        <p>Llega en estuche incluido, lista para regalar.</p>
+      </div>
+      <div class="regalo-items">
+        <div class="regalo-item">
+          <div class="regalo-icon">🎁</div>
+          <div class="regalo-item-text">
+            <strong>Estuche incluido</strong>
+            <span>Presentación lista para regalar, sin coste adicional</span>
+          </div>
+        </div>
+        <div class="regalo-item">
+          <div class="regalo-icon">🚚</div>
+          <div class="regalo-item-text">
+            <strong>Envío gratuito a toda España</strong>
+            <span>Entrega en 7-10 días · Fabricada en 48h tras el pedido</span>
+          </div>
+        </div>
+        <div class="regalo-item">
+          <div class="regalo-icon">↩️</div>
+          <div class="regalo-item-text">
+            <strong>Cambio sin preguntas</strong>
+            <span>Si no le quedan bien, la cambiamos o devolvemos el dinero</span>
+          </div>
+        </div>
+        <div class="regalo-item">
+          <div class="regalo-icon">🌿</div>
+          <div class="regalo-item-text">
+            <strong>Sostenible y local</strong>
+            <span>Madera certificada FSC · Hecha a mano en La Laguna, Tenerife</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="container">
+    <div class="section-label">Modelo 00</div>
+    <h2>Hecha para quien<br>mira <em>diferente.</em></h2>
+    <p>Artesanal · Atemporal · Única</p>
+    <div class="cta-final-price">160 €</div>
+    <div class="cta-final-note">Impuestos incluidos · Envío gratuito · Fabricada en 48h</div>
+    <a href="https://buy.stripe.com/6oUaEX8c88nlgx3fRK1oI0d" class="btn-comprar-final">Comprar ahora</a>
+  </div>
+</section>
+
+<footer>
+  <p>© Oë Gafas de Madera · C/ San Agustín 39, La Laguna, Tenerife · <a href="mailto:info@oegafasdemadera.com">info@oegafasdemadera.com</a></p>
+</footer>
+
+</body>
+</html>
