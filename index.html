@@ -1047,6 +1047,14 @@ fbq('track', 'PageView');
 src="https://www.facebook.com/tr?id=701353565589199&ev=PageView&noscript=1"
 /></noscript>
 <!-- End Meta Pixel Code -->
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0WQ7Y5QX80"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0WQ7Y5QX80');
+</script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -1741,6 +1749,14 @@ function elegirTalla(btn, t) {
 
 function comprar() {
   if (!actual) return;
+  // GA4 event
+  if (typeof gtag === 'function') {
+    gtag('event', 'begin_checkout', {
+      currency: 'EUR',
+      value: actual.price,
+      items: [{ item_id: actual.id, item_name: actual.name, price: actual.price }]
+    });
+  }
   var url = actual.stripe
     + '?client_reference_id=' + encodeURIComponent(actual.name + '-Talla-' + talla)
     + '&custom_fields[0][key]=talla&custom_fields[0][label][type]=custom&custom_fields[0][label][custom]=Talla+elegida&custom_fields[0][type]=text&custom_fields[0][text][default_value]=' + talla;

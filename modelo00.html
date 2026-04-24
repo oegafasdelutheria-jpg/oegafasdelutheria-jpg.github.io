@@ -493,6 +493,14 @@ footer a { color: var(--gold2); }
   .lennon-imgs { gap: 24px; }
 }
 </style>
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0WQ7Y5QX80"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-0WQ7Y5QX80');
+</script>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -502,7 +510,7 @@ footer a { color: var(--gold2); }
 <nav>
   <a href="index.html" class="nav-logo">O<span>ë</span></a>
   <a href="index.html" class="nav-back">← Volver a la tienda</a>
-  <a href="https://buy.stripe.com/6oUaEX8c88nlgx3fRK1oI0d" class="nav-cta">Comprar · 160€</a>
+  <a href="https://buy.stripe.com/6oUaEX8c88nlgx3fRK1oI0d" class="nav-cta" onclick="gtag('event','begin_checkout',{currency:'EUR',value:160,items:[{item_id:'p00',item_name:'Modelo 00',price:160}]})">Comprar · 160€</a>
 </nav>
 
 <!-- HERO -->
@@ -513,7 +521,7 @@ footer a { color: var(--gold2); }
     <p class="hero-subtitle">La redonda. La más atemporal de la colección Oë. Palisandro FSC con veta natural visible, lentes alemanas y bisagras flex que se adaptan a cualquier rostro.</p>
     <div class="hero-price">160 €</div>
     <div class="hero-price-note">Impuestos incluidos · Envío gratuito · Fabricada en 48h</div>
-    <a href="https://buy.stripe.com/6oUaEX8c88nlgx3fRK1oI0d" class="btn-comprar">Comprar ahora</a>
+    <a href="https://buy.stripe.com/6oUaEX8c88nlgx3fRK1oI0d" class="btn-comprar" onclick="gtag('event','begin_checkout',{currency:'EUR',value:160,items:[{item_id:'p00',item_name:'Modelo 00',price:160}]})">Comprar ahora</a>
   </div>
   <div class="hero-right">
     <img src="bodegon2.png" alt="Modelo 00 Oë Gafas de Madera">
@@ -657,7 +665,7 @@ footer a { color: var(--gold2); }
     <p>Artesanal · Atemporal · Única</p>
     <div class="cta-final-price">160 €</div>
     <div class="cta-final-note">Impuestos incluidos · Envío gratuito · Fabricada en 48h</div>
-    <a href="https://buy.stripe.com/6oUaEX8c88nlgx3fRK1oI0d" class="btn-comprar-final">Comprar ahora</a>
+    <a href="https://buy.stripe.com/6oUaEX8c88nlgx3fRK1oI0d" class="btn-comprar-final" onclick="gtag('event','begin_checkout',{currency:'EUR',value:160,items:[{item_id:'p00',item_name:'Modelo 00',price:160}]})">Comprar ahora</a>
   </div>
 </section>
 
