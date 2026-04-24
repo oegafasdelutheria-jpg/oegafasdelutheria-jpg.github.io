@@ -1675,8 +1675,8 @@ function renderizar(filtro) {
     html += '<div class="product-name">' + p.name + '</div>';
     html += '<div class="product-type">' + p.type + '</div>';
     html += '<div class="product-bottom">';
-    html += '<div class="product-price">' + p.price + ' &euro;<small>IVA incluido</small></div>';
-    html += '<button class="btn-add" onclick="event.stopPropagation();abrir(\'' + p.id + '\')">Ver + comprar</button>';
+    html += '<div class="product-price">' + p.price + ' &euro;<small>Impuestos incluidos</small></div>';
+    html += '<button class="btn-add" onclick="event.stopPropagation();abrir(\'' + p.id + '\')">Ver más</button>';
     html += '</div></div></div>';
   }
   document.getElementById('grid').innerHTML = html;
