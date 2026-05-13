@@ -1835,6 +1835,19 @@ var cookiesOk = false;
 try { cookiesOk = localStorage.getItem('cookies_ok'); } catch(e) {}
 try { if (!cookiesOk) cookiesOk = sessionStorage.getItem('cookies_ok'); } catch(e) {}
 if (!cookiesOk) { document.getElementById('cookieBanner').style.display = 'flex'; }
+
+// Abrir modal si la URL tiene hash de producto
+window.addEventListener('load', function() {
+  var hash = window.location.hash.replace('#','');
+  if (hash) {
+    for (var i = 0; i < PRODS.length; i++) {
+      if (PRODS[i].id === hash) {
+        setTimeout(function(id){ abrir(id); }, 300, hash);
+        break;
+      }
+    }
+  }
+});
 </script>
 </body>
 </html>
