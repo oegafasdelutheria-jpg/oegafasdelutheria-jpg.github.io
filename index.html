@@ -109,6 +109,29 @@ nav {
 }
 .nav-cta:hover { background: var(--gold); }
 
+.mobile-sticky-cta { display: none; }
+@media (max-width: 768px) {
+  .mobile-sticky-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    left: 12px; right: 12px; bottom: 12px;
+    z-index: 90;
+    background: var(--text);
+    color: var(--bg);
+    font-family: var(--sans);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 15px;
+    border-radius: 2px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  }
+  body { padding-bottom: 76px; }
+}
+
 /* HERO */
 .hero {
   min-height: 100vh;
@@ -432,6 +455,9 @@ nav {
   overflow-y: auto;
 }
 @media (max-width: 768px) {
+  .section { padding: 64px 0; }
+  .section-title { font-size: 2.15rem; margin-bottom: 16px; }
+  .section-label { margin-bottom: 12px; }
   .nav-cta { display: none; }
   .nav-doble-cero { display: inline-block; }
   html, body { overflow-x: hidden; max-width: 100vw; }
@@ -1076,7 +1102,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <li><a href="modelo00.html" style="color:var(--gold)">La Doble Cero</a></li>
     <li><a href="#colección">Colección</a></li>
     <li><a href="#historia">Nosotros</a></li>
-    <li><a href="#trayectoria">Trayectoria</a></li>
+    <li><a href="#maderas">Trayectoria</a></li>
     <li><a href="#testimonios">Testimonios</a></li>
     <li><a href="#tienda">Tienda</a></li>
     <li><a href="#contacto">Contacto</a></li>
@@ -1084,6 +1110,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="modelo00.html" class="nav-doble-cero" style="font-size:11px;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:8px 16px;border-radius:4px;">La Doble Cero</a>
   <a href="#colección" class="nav-cta">Ver colección</a>
 </nav>
+
+<a href="#colección" class="mobile-sticky-cta">Ver colección · desde 160 €</a>
 
 <!-- HERO -->
 <div class="hero" id="inicio">
@@ -1243,7 +1271,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<!-- MADERAS -->
+<!-- MADERAS + TRAYECTORIA (fusionado, más breve) -->
 <div class="section" id="maderas" style="background:var(--bg2);border-top:1px solid var(--border)">
   <div class="container">
     <div class="maderas-grid">
@@ -1263,58 +1291,41 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </div>
       <div>
-        <div class="section-label">Maderas</div>
+        <div class="section-label">Maderas y trayectoria</div>
         <h2 class="section-title">La nobleza<br>de <em>lo natural</em></h2>
-        <p style="font-size:1rem;color:var(--text2);line-height:1.8;margin-bottom:20px">
-          No usamos madera cualquiera. Cada tabla que entra en nuestro taller tiene certificacion de origen, procedente de bosques de cultivo con tala responsable.
-        </p>
-        <p style="font-size:1rem;color:var(--text2);line-height:1.8">
+        <p style="font-size:1rem;color:var(--text2);line-height:1.8;margin-bottom:28px">
           El palisandro es especialmente noble para las gafas: resistente a la humedad, ligero sobre la cara, y con una veta que hace que no existan dos pares iguales en el mundo.
         </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px 24px;border-top:1px solid var(--border);padding-top:24px">
+          <div>
+            <div style="font-family:var(--serif);color:var(--gold);font-size:0.95rem;margin-bottom:4px">2008 → 2012</div>
+            <div style="font-size:0.85rem;color:var(--text2);line-height:1.6">Ebanistería y luego luthería: construcción de instrumentos musicales de caja y cuerda.</div>
+          </div>
+          <div>
+            <div style="font-family:var(--serif);color:var(--gold);font-size:0.95rem;margin-bottom:4px">2014</div>
+            <div style="font-size:0.85rem;color:var(--text2);line-height:1.6">La primera gafa: la misma exigencia de un instrumento, aplicada a lo que llevas en la cara.</div>
+          </div>
+          <div>
+            <div style="font-family:var(--serif);color:var(--gold);font-size:0.95rem;margin-bottom:4px">Hoy</div>
+            <div style="font-size:0.85rem;color:var(--text2);line-height:1.6">Más de 15 años trabajando la madera en cada par que sale del taller.</div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<!-- TRAYECTORIA -->
-<div class="section" id="trayectoria" style="background:var(--bg2);border-top:1px solid var(--border)">
-  <div class="container">
-    <div class="section-label">Trayectoria</div>
-    <h2 class="section-title">El camino<br>hasta <em>tus ojos</em></h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <div class="tl-year">2008</div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-title">La ebanistería</div>
-          <div class="tl-desc">El primer encuentro con la madera como oficio. Aprender a escucharla, a respetar su veta, a entender que cada pieza tiene una dirección propia. La base de todo lo que vendría después.</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-year">2012</div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-title">La luthería</div>
-          <div class="tl-desc">Construcción de instrumentos musicales de caja y cuerda. Técnicas más complejas, maderas más nobles, una exigencia mayor. Las mismas maderas que hoy viven en nuestras gafas.</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-year">2014</div>
-        <div class="tl-dot"></div>
-        <div class="tl-content">
-          <div class="tl-title">La primera gafa</div>
-          <div class="tl-desc">¿Qué llevas cerca de tu cara cada día que merezca la misma atención que un instrumento? La respuesta llegó en forma de gafa. Un experimento que se convirtió en vocación.</div>
-        </div>
-      </div>
-      <div class="timeline-item">
-        <div class="tl-year">Hoy</div>
-        <div class="tl-dot tl-dot-active"></div>
-        <div class="tl-content">
-          <div class="tl-title">Oë Gafas de Madera</div>
-          <div class="tl-desc">Más de 15 años trabajando la madera. Cada par de gafas lleva dentro todo ese camino — la ebanistería, la luthería, y la convicción de que lo hecho a mano tiene alma.</div>
-        </div>
-      </div>
+<!-- RECORDATORIO DE PRODUCTO: rompe el tramo de solo-texto antes de llegar a testimonios -->
+<div class="section" style="padding:64px 0;border-top:1px solid var(--border)">
+  <div class="container" style="text-align:center">
+    <div class="section-label" style="justify-content:center">Mientras tanto</div>
+    <h2 class="section-title" style="font-size:2rem">Cada historia,<br>sobre <em>una gafa real</em></h2>
+    <div style="display:flex;justify-content:center;align-items:center;gap:12px;margin:32px 0;flex-wrap:nowrap">
+      <img src="p02-front.webp" alt="Modelo 02" loading="lazy" style="width:min(28vw,130px);height:auto">
+      <img src="pg1-front.webp" alt="Modelo G1" loading="lazy" style="width:min(28vw,130px);height:auto">
+      <img src="p012-front.webp" alt="Modelo 012" loading="lazy" style="width:min(28vw,130px);height:auto">
     </div>
+    <a href="#colección" class="btn-primary">Ver colección</a>
   </div>
 </div>
 
