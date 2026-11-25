@@ -195,6 +195,11 @@
   .cookie-bar{padding:16px 24px}
   .legal-box{padding:40px 24px}
 }
+@media(max-width:600px){
+  .nav{grid-template-columns:auto 1fr;gap:10px}
+  .nav .right{gap:8px}
+  .nav-doble{padding:6px 9px!important;font-size:10px!important;letter-spacing:.08em}
+}
 </style>
 </head>
 <body>
@@ -212,6 +217,7 @@
   <a class="brand" href="#"><img src="logo.png" alt="Oë Gafas de Madera"></a>
   <div class="right">
     <a href="modelo00.html" class="nav-doble">La Doble Cero</a>
+    <a href="lagunera.html" class="nav-doble">La Lagunera</a>
     <a href="#tienda">La Laguna</a>
     <a href="#coleccion">Comprar</a>
   </div>
@@ -407,6 +413,7 @@
         <li><a href="#archivo">Archivo Oë</a></li>
         <li><a href="#oficio">Cómo las hacemos</a></li>
         <li><a href="modelo00.html">La Doble Cero</a></li>
+        <li><a href="lagunera.html">La Lagunera</a></li>
       </ul>
     </div>
     <div>
@@ -601,6 +608,7 @@ document.addEventListener('keydown', function(e){
 // Hash modal on load
 window.addEventListener('load', function(){
   var hash = window.location.hash.replace('#','');
+  if(hash && typeof TEXTOS_LEGALES!=='undefined' && TEXTOS_LEGALES[hash]){ setTimeout(function(h){abrirLegal(h);},300,hash); }
   if(hash){
     for(var i=0;i<PRODS.length;i++){
       if(PRODS[i].id===hash){ setTimeout(function(id){abrir(id);},300,hash); break; }
